@@ -30,10 +30,7 @@ function mergeSort(arr) {
     let leftArr = arr.slice(0, middle + 1);
     let rightArr = arr.slice(middle + 1);
 
-    let arrLeft = mergeSort(leftArr);
-    let arrRight = mergeSort(rightArr);
-
-    return merge(arrLeft, arrRight);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
 
 console.log(mergeSort([4,3,45,67,6,13]));
